@@ -44,16 +44,16 @@ class NewVisitorTest(LiveServerTestCase):
             inputbox.get_attribute('placeholder'),
             'Enter a to-do item'
         )
-        # 他在文本输入框中输入了“Buy flowers"
+        # 他在文本输入框中输入了"Buy flowers"
         inputbox.send_keys('Buy flowers')
         # 他按回车键后，页面更新了
-        # 待办事项表格中显示了“1: Buy flowers"
+        # 待办事项表格中显示了"1: Buy flowers"
         inputbox.send_keys(Keys.ENTER)
         self.wait_for_row_in_list_table('1: Buy flowers')
 
         # 页面中又显示了一个文本输入框，可以输入其他待办事项
-        # 他又输入了“Give a gift to Lisi"
-        inputbox = self.browser.find_element(By.ID,'id_new_item')
+        # 他又输入了"Give a gift to Lisi"
+        inputbox=self.browser.find_element(By.ID,'id_new_item')
         inputbox.send_keys('Give a gift to Lisi')
         inputbox.send_keys(Keys.ENTER)
 
